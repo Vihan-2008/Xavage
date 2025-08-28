@@ -19,10 +19,9 @@ export function Navigation() {
 
   const navItems = [
     { href: "/", label: "Home" },
-    { href: "/games", label: "Games" },
     { href: "/events", label: "Events" },
     { href: "/sponsors", label: "Sponsors" },
-    { href: "/register", label: "Register" },
+    { href: "/contact", label: "Contact" }, // Added contact to navigation items
   ]
 
   return (
@@ -37,7 +36,7 @@ export function Navigation() {
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center animate-glow">
               <span className="text-primary-foreground font-bold text-lg">X</span>
             </div>
-            <span className="font-bold text-xl">XSAVAGE 25</span>
+            <span className="font-bold text-xl">XAVAGE 25</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -51,7 +50,9 @@ export function Navigation() {
                 {item.label}
               </Link>
             ))}
-            <Button className="animate-pulse-border bg-primary hover:bg-primary/90">Register Now</Button>
+            <Button className="animate-pulse-border bg-primary hover:bg-primary/90" asChild>
+              <Link href="/events">Register Now</Link>
+            </Button>
           </div>
 
           {/* Mobile menu button */}
@@ -77,7 +78,9 @@ export function Navigation() {
                 </Link>
               ))}
               <div className="px-3 py-2">
-                <Button className="w-full bg-primary hover:bg-primary/90">Register Now</Button>
+                <Button className="w-full bg-primary hover:bg-primary/90" asChild>
+                  <Link href="/events">Register Now</Link>
+                </Button>
               </div>
             </div>
           </div>

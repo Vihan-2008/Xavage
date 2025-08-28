@@ -124,23 +124,16 @@ export function EventsGrid() {
                   </div>
                 </div>
 
-                <Button className="w-full bg-primary/10 hover:bg-primary hover:text-primary-foreground border border-primary/30 group-hover:animate-glow">
+                <Button
+                  className="w-full smooth-button bg-primary/10 hover:bg-primary hover:text-primary-foreground border border-primary/30 group-hover:animate-enhanced-glow"
+                  onClick={() => window.open("https://forms.office.com/r/YourMSFormID", "_blank")}
+                >
                   <Zap className="w-4 h-4 mr-2" />
                   Register
                 </Button>
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-accent text-accent hover:bg-accent hover:text-accent-foreground bg-transparent"
-          >
-            View All Events
-          </Button>
         </div>
       </div>
     </section>

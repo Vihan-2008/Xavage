@@ -2,6 +2,8 @@ import { Navigation } from "@/components/navigation"
 import { HeroSection } from "@/components/hero-section"
 import { EventsGrid } from "@/components/events-grid"
 import { SponsorsSection } from "@/components/sponsors-section"
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 export default function HomePage() {
   return (
@@ -20,12 +22,17 @@ export default function HomePage() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-lg font-semibold animate-glow">
-              Register Now
-            </button>
-            <button className="border border-accent text-accent hover:bg-accent hover:text-accent-foreground px-8 py-3 rounded-lg font-semibold">
-              Contact Us
-            </button>
+            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground animate-glow" size="lg" asChild>
+              <Link href="/events">Register Now</Link>
+            </Button>
+            <Button
+              variant="outline"
+              className="border-accent text-accent hover:bg-accent hover:text-accent-foreground bg-transparent"
+              size="lg"
+              asChild
+            >
+              <Link href="/contact">Contact Us</Link>
+            </Button>
           </div>
 
           <div className="border-t border-border pt-8 text-sm text-muted-foreground">

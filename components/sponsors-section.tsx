@@ -3,6 +3,7 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ExternalLink } from "lucide-react"
+import Link from "next/link"
 
 const sponsors = [
   {
@@ -39,15 +40,6 @@ export function SponsorsSection() {
   return (
     <section className="py-20 px-4 bg-card/30">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            OUR <span className="text-primary">SPONSORS</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Partnering with industry leaders to bring you the ultimate gaming experience
-          </p>
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {sponsors.map((sponsor, index) => (
             <Card
@@ -58,9 +50,9 @@ export function SponsorsSection() {
               <CardContent className="p-6 text-center">
                 <div className="mb-4 p-4 bg-muted/30 rounded-lg">
                   <img
-                    src={sponsor.logo || "/placeholder.svg"}
+                    src={`/abstract-geometric-shapes.png?key=holu6&height=64&width=200&query=${encodeURIComponent(sponsor.name + " logo")}`}
                     alt={sponsor.name}
-                    className="w-full h-16 object-contain filter brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-300"
+                    className="w-full h-16 object-contain transition-all duration-300 group-hover:scale-110"
                   />
                 </div>
 
@@ -85,13 +77,18 @@ export function SponsorsSection() {
           <div className="mb-8">
             <h3 className="text-2xl font-bold mb-4">Become a Sponsor</h3>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Join us in creating an unforgettable experience. Partner with XSAVAGE 25 and reach our passionate gaming
+              Join us in creating an unforgettable experience. Partner with XAVAGE 25 and reach our passionate gaming
               community.
             </p>
           </div>
-          <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-            Sponsorship Opportunities
-          </Button>
+          <Link href="/contact">
+            <Button
+              size="lg"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-accent/25"
+            >
+              Sponsorship Opportunities
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

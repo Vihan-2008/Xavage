@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Calendar, MapPin } from "lucide-react"
+import Link from "next/link"
 
 export function HeroSection() {
   return (
@@ -16,8 +17,8 @@ export function HeroSection() {
 
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
         <div className="mb-8">
-          <h1 className="glitch mb-4 text-4xl md:text-6xl lg:text-8xl" data-text="XSAVAGE 25">
-            XSAVAGE 25
+          <h1 className="glitch mb-4 text-4xl md:text-6xl lg:text-8xl" data-text="XAVAGE 25">
+            XAVAGE 25
           </h1>
           <h2 className="text-2xl md:text-4xl font-bold text-muted-foreground mb-6">11TH EDITION</h2>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-lg text-muted-foreground mb-8">
@@ -33,16 +34,23 @@ export function HeroSection() {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button size="lg" className="bg-primary hover:bg-primary/90 animate-glow group">
-            Register Now
-            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+          <Button
+            size="lg"
+            className="bg-primary hover:bg-primary/90 animate-glow group hover:scale-105 hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 ease-out"
+            asChild
+          >
+            <Link href="/events">
+              Register Now
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+            </Link>
           </Button>
           <Button
             size="lg"
             variant="outline"
-            className="border-accent text-accent hover:bg-accent hover:text-accent-foreground bg-transparent"
+            className="border-accent text-accent hover:bg-accent hover:text-accent-foreground bg-transparent hover:scale-105 hover:shadow-lg hover:shadow-accent/25 transition-all duration-300 ease-out"
+            asChild
           >
-            View Events
+            <Link href="/events">View Events</Link>
           </Button>
         </div>
 

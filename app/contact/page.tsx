@@ -1,11 +1,11 @@
 import { Navigation } from "@/components/navigation"
-import { EventsGrid } from "@/components/events-grid"
+import { ContactForm } from "@/components/contact-form"
 
-export default function EventsPage() {
+export default function ContactPage() {
   return (
     <main className="min-h-screen pt-16">
       <Navigation />
-      <EventsGrid />
+      <ContactForm />
     </main>
   )
 }
