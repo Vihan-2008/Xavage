@@ -32,11 +32,11 @@ export function ContactForm() {
         "service_k6j3k65", // Service ID provided by user
         "template_8psuomt", // Updated with provided template ID
         {
-          from_name: formData.name,
-          from_email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-          to_email: "xavage@tisb.ac.in", // Updated to provided email
+          name: formData.name, // Maps to {{name}} in template
+          email: formData.email, // Maps to {{email}} in template
+          title: formData.subject, // Maps to {{title}} in template subject line
+          message: formData.message, // Maps to {{message}} in template
+          time: new Date().toLocaleString(), // Maps to {{time}} in template
         },
         "IzW4cQAKEm03U6YkF", // Public ID provided by user
       )

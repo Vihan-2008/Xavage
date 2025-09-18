@@ -1,10 +1,11 @@
 "use client"
 
+import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Trophy, Users, Clock, Zap } from "lucide-react"
-import Link from "next/link"
+import { EventDetailsModal } from "./event-details-modal"
 
 const events = [
   {
@@ -86,6 +87,14 @@ const events = [
 ]
 
 export function EventsGrid() {
+  const [selectedEvent, setSelectedEvent] = useState<(typeof events)[0] | null>(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const handleViewDetails = (event: (typeof events)[0]) => {
+    setSelectedEvent(event)
+    setIsModalOpen(true)
+  }
+
   return (
     <section className="py-20 px-4">
       <div className="max-w-7xl mx-auto">
@@ -135,9 +144,9 @@ export function EventsGrid() {
                   <Button
                     variant="outline"
                     className="flex-1 border-primary/30 hover:bg-primary/10 bg-transparent"
-                    asChild
+                    onClick={() => handleViewDetails(event)}
                   >
-                    <Link href={`/events/${event.id}`}>View Details</Link>
+                    View Details
                   </Button>
                   <Button
                     className="flex-1 smooth-button bg-primary/10 hover:bg-primary hover:text-primary-foreground border border-primary/30 group-hover:animate-enhanced-glow"
@@ -152,6 +161,10 @@ export function EventsGrid() {
           ))}
         </div>
       </div>
+
+      {selectedEvent && (
+        <EventDetailsModal event={selectedEvent} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      )}
     </section>
   )
 }
