@@ -4,77 +4,84 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Trophy, Users, Clock, Zap } from "lucide-react"
+import Link from "next/link"
 
 const events = [
   {
+    id: "deal-or-no-deal",
     title: "Deal or No Deal",
-    description: "Outsmart the banker in this high-stakes game of chance and strategy",
+    description:
+      "Think you can outplay the market? Step into the war room where clubs are made and legends are bought.",
     category: "Strategy",
-    participants: "1v1",
-    duration: "30 min",
+    participants: "Teams of 3-4",
+    duration: "3 rounds",
     prize: "₹5,000",
     color: "from-red-500/20 to-orange-500/20",
-    icon: "🎯",
+    icon: "⚽",
+    registrationLink: "https://forms.cloud.microsoft/r/MHafHdA1UT",
   },
   {
-    title: "The Money-the-Money",
-    description: "Navigate through financial challenges and investment decisions",
-    category: "Finance",
-    participants: "Teams",
-    duration: "45 min",
-    prize: "₹8,000",
-    color: "from-green-500/20 to-emerald-500/20",
-    icon: "💰",
-  },
-  {
-    title: "Ready, Set? Sell!",
-    description: "From Pitch to Profit: Land the ideal sales presentation",
-    category: "Business",
-    participants: "Solo",
-    duration: "20 min",
+    id: "ready-set-sell",
+    title: "Ready? Set? Sell!",
+    description: "Get ready to unleash your creativity and showcase your team's ultimate marketing genius.",
+    category: "Marketing",
+    participants: "Teams of 3-4",
+    duration: "3 rounds",
     prize: "₹6,000",
-    color: "from-blue-500/20 to-cyan-500/20",
-    icon: "📈",
-  },
-  {
-    title: "Trojan's Tank",
-    description: "Sink or Swim: Present your innovative business ideas",
-    category: "Pitch",
-    participants: "Teams",
-    duration: "60 min",
-    prize: "₹10,000",
     color: "from-purple-500/20 to-pink-500/20",
-    icon: "🚀",
+    icon: "📢",
+    registrationLink: "https://forms.cloud.microsoft/r/ngBg5qbn8g",
   },
   {
-    title: "The Courting",
-    description: "The Gavel is in your court: Legal strategy and argumentation",
-    category: "Legal",
-    participants: "Teams",
-    duration: "90 min",
-    prize: "₹7,500",
-    color: "from-amber-500/20 to-yellow-500/20",
-    icon: "⚖️",
-  },
-  {
-    title: "Corporate Crisis",
-    description: "Real-world business crisis management and decision making",
-    category: "Management",
-    participants: "Teams",
-    duration: "75 min",
-    prize: "₹9,000",
-    color: "from-indigo-500/20 to-blue-500/20",
-    icon: "🏢",
-  },
-  {
-    title: "Stakeholders' Showdown",
-    description: "Corporate Cryptography: Navigate complex stakeholder relationships",
+    id: "stakeholders-showdown",
+    title: "Stakeholder's Showdown",
+    description: "When giants clash, the world watches. Navigate the fierce rivalry of Apple vs Samsung.",
     category: "Corporate",
-    participants: "Teams",
-    duration: "50 min",
+    participants: "Teams of 3-4",
+    duration: "3 rounds",
     prize: "₹8,500",
-    color: "from-teal-500/20 to-green-500/20",
+    color: "from-blue-500/20 to-purple-500/20",
     icon: "🤝",
+    registrationLink: "https://forms.cloud.microsoft/r/N7MYsDUpSz",
+  },
+  {
+    id: "capital-carnage",
+    title: "Capital Carnage",
+    description:
+      "Enter the high-pressure world of corporate decision-making where every choice can lead to success or collapse.",
+    category: "Business",
+    participants: "Teams of 2-4",
+    duration: "3 rounds",
+    prize: "₹9,000",
+    color: "from-green-500/20 to-teal-500/20",
+    icon: "📊",
+    registrationLink: "https://forms.cloud.microsoft/r/Xu7qsFYzpv",
+  },
+  {
+    id: "trojans-tank",
+    title: "Trojan's Tank",
+    description:
+      "The spotlight is on, the clock is ticking, and the investors are waiting. Defend your startup against tough questions.",
+    category: "Pitch",
+    participants: "Teams of 2-4",
+    duration: "2 rounds",
+    prize: "₹10,000",
+    color: "from-red-500/20 to-yellow-500/20",
+    icon: "🚀",
+    registrationLink: "https://forms.cloud.microsoft/r/rjwd8EjEmW",
+  },
+  {
+    id: "the-courting",
+    title: "The Courting",
+    description:
+      "In this ultimate showdown, participants must get into real-world legal scenarios, think quickly and argue even faster.",
+    category: "Legal",
+    participants: "Teams of 4",
+    duration: "3 rounds",
+    prize: "₹7,500",
+    color: "from-amber-500/20 to-orange-500/20",
+    icon: "⚖️",
+    registrationLink: "https://forms.cloud.microsoft/r/PL82hZWn31",
   },
 ]
 
@@ -124,13 +131,22 @@ export function EventsGrid() {
                   </div>
                 </div>
 
-                <Button
-                  className="w-full smooth-button bg-primary/10 hover:bg-primary hover:text-primary-foreground border border-primary/30 group-hover:animate-enhanced-glow"
-                  onClick={() => window.open("https://forms.office.com/r/YourMSFormID", "_blank")}
-                >
-                  <Zap className="w-4 h-4 mr-2" />
-                  Register
-                </Button>
+                <div className="flex gap-2">
+                  <Button
+                    variant="outline"
+                    className="flex-1 border-primary/30 hover:bg-primary/10 bg-transparent"
+                    asChild
+                  >
+                    <Link href={`/events/${event.id}`}>View Details</Link>
+                  </Button>
+                  <Button
+                    className="flex-1 smooth-button bg-primary/10 hover:bg-primary hover:text-primary-foreground border border-primary/30 group-hover:animate-enhanced-glow"
+                    onClick={() => window.open(event.registrationLink, "_blank")}
+                  >
+                    <Zap className="w-4 h-4 mr-2" />
+                    Register
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           ))}

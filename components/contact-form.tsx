@@ -29,16 +29,16 @@ export function ContactForm() {
       const emailjs = (await import("@emailjs/browser")).default
 
       await emailjs.send(
-        "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
-        "YOUR_TEMPLATE_ID", // Replace with your EmailJS template ID
+        "service_k6j3k65", // Service ID provided by user
+        "template_8psuomt", // Updated with provided template ID
         {
           from_name: formData.name,
           from_email: formData.email,
           subject: formData.subject,
           message: formData.message,
-          to_email: "xavage25@tisb.org", // Replace with your email
+          to_email: "xavage@tisb.ac.in", // Updated to provided email
         },
-        "YOUR_PUBLIC_KEY", // Replace with your EmailJS public key
+        "IzW4cQAKEm03U6YkF", // Public ID provided by user
       )
 
       toast({
@@ -155,7 +155,7 @@ export function ContactForm() {
                   </div>
                   <div>
                     <h3 className="font-semibold">Email Us</h3>
-                    <p className="text-muted-foreground">xavage25@tisb.org</p>
+                    <p className="text-muted-foreground">xavage@tisb.ac.in</p>
                   </div>
                 </div>
               </CardContent>
