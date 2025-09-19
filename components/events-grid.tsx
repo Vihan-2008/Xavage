@@ -143,13 +143,13 @@ export function EventsGrid() {
                 <div className="flex gap-2">
                   <Button
                     variant="outline"
-                    className="flex-1 border-primary/30 hover:bg-primary/10 bg-transparent"
+                    className="flex-1 border-primary/30 hover:bg-primary/10 bg-transparent smooth-button hover:border-primary/70 hover:shadow-lg hover:shadow-primary/20"
                     onClick={() => handleViewDetails(event)}
                   >
                     View Details
                   </Button>
                   <Button
-                    className="flex-1 smooth-button bg-primary/10 hover:bg-primary hover:text-primary-foreground border border-primary/30 group-hover:animate-enhanced-glow"
+                    className="flex-1 smooth-button bg-primary/20 hover:bg-primary hover:text-primary-foreground border border-primary/30 animate-enhanced-glow hover:animate-glow relative overflow-hidden"
                     onClick={() => window.open(event.registrationLink, "_blank")}
                   >
                     <Zap className="w-4 h-4 mr-2" />

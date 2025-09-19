@@ -49,7 +49,7 @@ export function HeroSection() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button
             size="lg"
-            className="bg-primary hover:bg-primary/90 animate-glow group hover:scale-105 hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 ease-out"
+            className="bg-primary hover:bg-primary/90 animate-glow smooth-button animate-enhanced-glow group relative overflow-hidden"
             asChild
           >
             <Link href="/events">
@@ -60,7 +60,7 @@ export function HeroSection() {
           <Button
             size="lg"
             variant="outline"
-            className="border-accent text-accent hover:bg-accent hover:text-accent-foreground bg-transparent hover:scale-105 hover:shadow-lg hover:shadow-accent/25 transition-all duration-300 ease-out"
+            className="border-accent text-accent hover:bg-accent hover:text-accent-foreground bg-transparent smooth-button animate-pulse-border relative overflow-hidden"
             asChild
           >
             <Link href="/events">View Events</Link>
