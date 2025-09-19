@@ -59,7 +59,7 @@ export function HeroSection() {
           {[
             { number: "500+", label: "Participants" },
             { number: "15+", label: "Games" },
-            { number: "₹50K+", label: "Prize Pool" },
+            { number: "₹72K+", label: "Prize Pool" },
             { number: "11th", label: "Edition" },
           ].map((stat, index) => (
             <div key={index} className="text-center animate-float" style={{ animationDelay: `${index * 0.5}s` }}>

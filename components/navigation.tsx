@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 
@@ -21,7 +22,7 @@ export function Navigation() {
     { href: "/", label: "Home" },
     { href: "/events", label: "Events" },
     { href: "/sponsors", label: "Sponsors" },
-    { href: "/contact", label: "Contact" }, // Added contact to navigation items
+    { href: "/contact", label: "Contact" },
   ]
 
   return (
@@ -32,12 +33,22 @@ export function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center animate-glow">
-              <span className="text-primary-foreground font-bold text-lg">X</span>
-            </div>
-            <span className="font-bold text-xl">XAVAGE 25</span>
-          </Link>
+          <div className="flex items-center space-x-4">
+            <Link href="/" className="flex items-center space-x-2">
+              <Image
+                src="/images/xavage-logo.png"
+                alt="XAVAGE Logo"
+                width={32}
+                height={32}
+                className="object-contain"
+              />
+              <span className="font-bold text-xl">XAVAGE 25</span>
+            </Link>
+          </div>
+
+          <div className="hidden md:flex items-center">
+            <Image src="/images/tisb-logo.png" alt="TISB Logo" width={40} height={40} className="object-contain" />
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -66,6 +77,16 @@ export function Navigation() {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden bg-card border-t border-border">
+            <div className="flex items-center justify-center space-x-4 py-4 border-b border-border">
+              <Image src="/images/tisb-logo.png" alt="TISB Logo" width={30} height={30} className="object-contain" />
+              <Image
+                src="/images/xavage-logo.png"
+                alt="XAVAGE Logo"
+                width={40}
+                height={40}
+                className="object-contain"
+              />
+            </div>
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
                 <Link

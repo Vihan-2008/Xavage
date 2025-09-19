@@ -28,18 +28,25 @@ export function ContactForm() {
       // EmailJS integration
       const emailjs = (await import("@emailjs/browser")).default
 
+      const templateParams = {
+        name: formData.name,
+        email: formData.email,
+        title: formData.subject,
+        message: formData.message,
+        to_email: "xavage@tisb.ac.in", // Explicit recipient
+        reply_to: formData.email, // For reply functionality
+      }
+
+      console.log("[v0] Sending email with params:", templateParams)
+
       await emailjs.send(
         "service_k6j3k65", // Service ID provided by user
         "template_8psuomt", // Updated with provided template ID
-        {
-          name: formData.name, // Maps to {{name}} in template
-          email: formData.email, // Maps to {{email}} in template
-          title: formData.subject, // Maps to {{title}} in template subject line
-          message: formData.message, // Maps to {{message}} in template
-          time: new Date().toLocaleString(), // Maps to {{time}} in template
-        },
+        templateParams,
         "IzW4cQAKEm03U6YkF", // Public ID provided by user
       )
+
+      console.log("[v0] Email sent successfully")
 
       toast({
         title: "Message sent successfully!",
@@ -48,6 +55,7 @@ export function ContactForm() {
 
       setFormData({ name: "", email: "", subject: "", message: "" })
     } catch (error) {
+      console.log("[v0] Email send error:", error)
       toast({
         title: "Failed to send message",
         description: "Please try again or contact us directly.",
