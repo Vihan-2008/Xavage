@@ -3,12 +3,25 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Calendar, MapPin } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-accent/20"></div>
+
+      <div className="absolute inset-0 flex items-center justify-center">
+        <Image
+          src="/images/xavage-x-only.png"
+          alt="XAVAGE X Background"
+          width={800}
+          height={800}
+          className="opacity-30 mix-blend-screen scale-150 md:scale-125 lg:scale-100"
+          priority
+        />
+      </div>
+
       <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-float"></div>
       <div
         className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float"
