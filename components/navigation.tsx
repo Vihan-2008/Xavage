@@ -47,7 +47,15 @@ export function Navigation() {
           </div>
 
           <div className="hidden md:flex items-center">
-            <Image src="/images/tisb-logo.png" alt="TISB Logo" width={40} height={40} className="object-contain" />
+            <Link href="https://www.tisb.org/" target="_blank" rel="noopener noreferrer">
+              <Image
+                src="/images/tisb-logo.png"
+                alt="TISB Logo"
+                width={40}
+                height={40}
+                className="object-contain hover:scale-105 transition-transform duration-200"
+              />
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -78,7 +86,15 @@ export function Navigation() {
         {isOpen && (
           <div className="md:hidden bg-card border-t border-border">
             <div className="flex items-center justify-center space-x-4 py-4 border-b border-border">
-              <Image src="/images/tisb-logo.png" alt="TISB Logo" width={30} height={30} className="object-contain" />
+              <Link href="https://www.tisb.org/" target="_blank" rel="noopener noreferrer">
+                <Image
+                  src="/images/tisb-logo.png"
+                  alt="TISB Logo"
+                  width={30}
+                  height={30}
+                  className="object-contain hover:scale-105 transition-transform duration-200"
+                />
+              </Link>
               <Image
                 src="/images/xavage-logo.png"
                 alt="XAVAGE Logo"
