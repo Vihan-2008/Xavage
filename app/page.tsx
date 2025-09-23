@@ -50,7 +50,16 @@ export default function HomePage() {
 
           <div className="border-t border-border pt-8 text-sm text-muted-foreground">
             <p>&copy; 2025 XAVAGE 25. All rights reserved.</p>
-            <p className="mt-2">The International School Bangalore</p>
+            <p className="mt-2">
+              <Link
+                href="https://www.tisb.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary transition-colors duration-200"
+              >
+                The International School Bangalore
+              </Link>
+            </p>
           </div>
         </div>
       </footer>

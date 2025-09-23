@@ -1,6 +1,7 @@
 "use client"
 
 import type React from "react"
+import Link from "next/link"
 
 import { useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -177,11 +178,26 @@ export function ContactForm() {
                   </div>
                   <div>
                     <h3 className="font-semibold">Visit Us</h3>
-                    <p className="text-muted-foreground">
+                    <Link
+                      href="https://www.google.com/maps/dir//NAFL+Valley,+Circle,+Sarjapur+Road,+near+Dommasandra,+Whitefield,+Bengaluru,+Karnataka+562125/@12.8916536,77.6674154,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x3bae0d56b869f2cd:0xe118aefbde9093b3!2m2!1d77.7498173!2d12.8916665?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-primary transition-colors duration-200"
+                    >
                       The International School Bangalore
                       <br />
-                      NAFL Valley, Whitefield, Bangalore
-                    </p>
+                      NAFL Valley
+                      <br />
+                      Whitefield - Sarjapur Road
+                      <br />
+                      Near Dommasandra Circle
+                      <br />
+                      Bangalore - 562125
+                      <br />
+                      Karnataka India
+                      <br />
+                      +91 80 6723 5900
+                    </Link>
                   </div>
                 </div>
               </CardContent>

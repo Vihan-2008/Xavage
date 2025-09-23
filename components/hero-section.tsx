@@ -41,7 +41,14 @@ export function HeroSection() {
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="w-5 h-5 text-accent" />
-              <span>THE INTERNATIONAL SCHOOL BANGALORE</span>
+              <Link
+                href="https://www.tisb.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary transition-colors duration-200"
+              >
+                THE INTERNATIONAL SCHOOL BANGALORE
+              </Link>
             </div>
           </div>
         </div>
