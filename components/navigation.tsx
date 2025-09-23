@@ -46,18 +46,6 @@ export function Navigation() {
             </Link>
           </div>
 
-          <div className="hidden md:flex items-center">
-            <Link href="https://www.tisb.org/" target="_blank" rel="noopener noreferrer">
-              <Image
-                src="/images/tisb-logo.png"
-                alt="TISB Logo"
-                width={40}
-                height={40}
-                className="object-contain hover:scale-105 transition-transform duration-200"
-              />
-            </Link>
-          </div>
-
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
@@ -86,15 +74,6 @@ export function Navigation() {
         {isOpen && (
           <div className="md:hidden bg-card border-t border-border">
             <div className="flex items-center justify-center space-x-4 py-4 border-b border-border">
-              <Link href="https://www.tisb.org/" target="_blank" rel="noopener noreferrer">
-                <Image
-                  src="/images/tisb-logo.png"
-                  alt="TISB Logo"
-                  width={30}
-                  height={30}
-                  className="object-contain hover:scale-105 transition-transform duration-200"
-                />
-              </Link>
               <Image
                 src="/images/xavage-logo.png"
                 alt="XAVAGE Logo"

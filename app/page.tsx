@@ -4,14 +4,27 @@ import { EventsGrid } from "@/components/events-grid"
 import { SponsorsSection } from "@/components/sponsors-section"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen relative">
       <Navigation />
       <HeroSection />
       <EventsGrid />
       <SponsorsSection />
+
+      <div className="fixed bottom-6 right-6 z-40">
+        <Link href="https://www.tisb.org/" target="_blank" rel="noopener noreferrer">
+          <Image
+            src="/images/tisb-logo.png"
+            alt="TISB Logo"
+            width={80}
+            height={80}
+            className="object-contain hover:scale-105 transition-transform duration-200 drop-shadow-lg"
+          />
+        </Link>
+      </div>
 
       {/* Footer */}
       <footer className="bg-card/50 border-t border-border py-12">
