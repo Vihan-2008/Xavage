@@ -42,7 +42,7 @@ export function HeroSection() {
             <div className="flex items-center gap-2">
               <MapPin className="w-5 h-5 text-accent" />
               <Link
-                href="https://www.tisb.org/"
+                href="https://www.google.com/maps/dir//NAFL+Valley,+Circle,+Sarjapur+Road,+near+Dommasandra,+Whitefield,+Bengaluru,+Karnataka+562125/@12.8916536,77.6674154,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x3bae0d56b869f2cd:0xe118aefbde9093b3!2m2!1d77.7498173!2d12.8916665?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-primary transition-colors duration-200"
